@@ -1,7 +1,6 @@
 package com.random.SpringSecurityJWT.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -10,6 +9,10 @@ import lombok.RequiredArgsConstructor;
 @Table(name = "products ")
 @RequiredArgsConstructor
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
-    private int price;
+
 }
